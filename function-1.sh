@@ -31,12 +31,12 @@ else
     echo -e "GIT is already...$Y INSTALLED"
 fi
 
-dnf list installed mysql*
+dnf list installed mariadb*
 
 if [ $? -ne 0 ]
 then 
-    dnf install mysql* -y --skip-broken
-    VALIDATE $? "Installing MySQL"
+    dnf install mariadb* -y
+    VALIDATE $? "Installing MARIADB"
 else
-    echo -e "MySQL is already...$Y INSTALLED"
+    echo -e "MARIADB is already...$Y INSTALLED"
 fi
