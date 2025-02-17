@@ -6,23 +6,23 @@ then
         exit 1
 fi
 
-# dnf list installed mysql
+dnf list installed mysql*
 
-# if [ $? -ne 0 ]
-# then 
-#     dnf install mysql
+if [ $? -ne 0 ]
+then 
+    dnf install mysql -y
 
-#     if [ $? -ne 0 ]
-#     then
-#         echo "Installaton: Failed"
-#         exit 1
-#     else
-#         echo "Installation: Success"
-#     fi
+    if [ $? -ne 0 ]
+    then
+        echo "Installaton: Failed"
+        exit 1
+    else
+        echo "Installation: Success"
+    fi
 
-# else
-#     echo "Installaton is already done"
-# fi
+else
+    echo "Installaton is already done"
+fi
 
 dnf list installed git*
 
